@@ -1,0 +1,42 @@
+﻿<ul class="list-unstyled">
+	@foreach (var driver in Drivers)
+	{
+		<li class="media my-3">
+			<div class="media-img-wrapper mr-2">
+				<a href="#">
+					<img style="width:300px" class="media-img" src="@driver.ImageUrl" alt="@driver.Name" />
+				</a>
+			</div>
+			<div class="media-body">
+				<a href="#">
+					<h4 class="mb-0">@driver.Name</h4>
+				</a>
+				<p>@driver.Team</p>
+				<h5 class="price">
+					No.@driver.Number
+				</h5>
+			</div>
+		</li>
+	}
+</ul>
+
+@code {
+	private static List<Driver> Drivers = new List<Driver>
+	{
+		new Driver
+		{
+			Id=1,Name="Charles Leclerc",Team="Ferrari",
+			ImageUrl="https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/leclerc.jpg.img.1920.medium.jpg/1677069223130.jpg",Number=16
+		},
+		new Driver
+		{
+			Id=2,Name="Carlos Sainz",Team="Ferrari",
+			ImageUrl="https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/sainz.jpg.img.1920.medium.jpg/1677069189406.jpg",Number=55
+		},
+		new Driver
+		{
+			Id=3,Name="Max Verstappen",Team="Red Bull",
+			ImageUrl="https://media.formula1.com/content/dam/fom-website/drivers/2023Drivers/verstappen.jpg.img.1920.medium.jpg/1677069646195.jpg",Number=1
+		},
+	};
+}
